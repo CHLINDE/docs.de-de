@@ -18,10 +18,10 @@ ms.lasthandoff: 05/04/2018
 ms.locfileid: "33555989"
 ---
 # <a name="how-to-implement-property-change-notification"></a>Gewusst wie: Implementieren von Benachrichtigungen bei Eigenschaftenänderungen
-Zur Unterstützung <xref:System.Windows.Data.BindingMode.OneWay> oder <xref:System.Windows.Data.BindingMode.TwoWay> Binden an die Ziel-Bindungseigenschaften automatisch entsprechend der dynamischen Änderungen der Bindungsquelle (z. B. im Vorschaufenster automatisch aktualisiert, wenn der Benutzer ein Formulars bearbeitet haben), aktivieren eine Klasse muss die richtige geänderten Eigenschaft Benachrichtigungen enthalten. In diesem Beispiel wird gezeigt, wie eine Klasse erstellen, die implementiert <xref:System.ComponentModel.INotifyPropertyChanged>.  
+Zur Unterstützung von automatischen <xref:System.Windows.Data.BindingMode.OneWay>-Bindings oder <xref:System.Windows.Data.BindingMode.TwoWay>-Bindings an die Ziel-Bindungseigenschaften bei dynamischen Änderungen der Bindungsquelle (z. B. um ein Vorschaufenster automatisch zu aktualisieren, wenn der Benutzer ein Formular bearbeitet hat), muss die Klasse die erforderliche Benachrichtigung auslösen. In diesem Beispiel wird gezeigt, wie eine Klasse erstellt wird, welche  <xref:System.ComponentModel.INotifyPropertyChanged> enthält.  
   
 ## <a name="example"></a>Beispiel  
- Implementiert <xref:System.ComponentModel.INotifyPropertyChanged> müssen Sie deklarieren die <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> Ereignis, und erstellen Sie die `OnPropertyChanged` Methode. Dann rufen Sie für jede Eigenschaft, für die Sie Änderungsbenachrichtigungen erhalten möchten, `OnPropertyChanged` auf, wenn die Eigenschaft aktualisiert wird.  
+ Um <xref:System.ComponentModel.INotifyPropertyChanged> zu implementieren, müssen Sie das <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> Ereignis deklarieren und die `OnPropertyChanged`-Methode erstellen. Dann lösen Sie für jede Eigenschaft, wofür Sie Änderungsbenachrichtigungen aktiv sein sollen, das `OnPropertyChanged`-Ereignis aus.
   
  [!code-csharp[SimpleBinding#PersonClass](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Person.cs#personclass)]
  [!code-vb[SimpleBinding#PersonClass](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleBinding/VisualBasic/Person.vb#personclass)]  
